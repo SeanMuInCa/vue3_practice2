@@ -7,6 +7,10 @@
     <h1>{{ sum }}</h1>
     <button @click="changeSum">点我</button>
     <hr>
+    <h1>{{ count }}</h1>
+    <h1>{{ doubleCount }}</h1>
+    <button @click="increment()">按钮2</button>
+    <hr>
     <button @click="getDog">再来一个</button>
     <br>
     <img v-for="(url, index) in dogList" :key="index" :src="url" alt="">
@@ -19,11 +23,13 @@ import { onBeforeMount, onMounted, withDefaults, onBeforeUpdate, onUpdated, onBe
 import { type PersonInterface, type Persons } from '@/types/index';
 import useSum from '@/composition/useSum';
 import useDog from '@/composition/useDog';
-
+import {useCounterStore} from '@/stores/counter'
 const {sum,changeSum} = useSum();//最佳实践
 const {dogList,getDog} = useDog();//最佳实践
 
 
+const { count, doubleCount, increment } = useCounterStore();
+console.log(count);
 
 
 
