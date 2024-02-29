@@ -16,7 +16,7 @@
         name:'zs',
         age:18
     }
-    defineProps(['personList']);
+    defineProps<{personList:Persons}>();
     let personList:Persons = [
         {id: `safsdf01`, name:'zs',age: 30},
         {id: `safsdf02`, name:'ls',age: 12},

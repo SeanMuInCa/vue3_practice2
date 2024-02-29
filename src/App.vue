@@ -1,5 +1,5 @@
 <template>
-  <Person personList/>
+  <Person :personList="personList"/>
 </template>
 <script setup lang="ts" name="App">
   import Person from "@/components/Person.vue";
