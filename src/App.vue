@@ -4,12 +4,13 @@
     <h1>vue路由测试</h1>
   </div>
   <div class="nav">
-    <a href="" class="active">首页</a>
-    <a href="">新闻</a>
-    <a href="">关于</a>
+    <a href="/home" class="active">首页</a>
+    <a href="/news">新闻</a>
+    <a href="/about">关于</a>
   </div>
   <div class="content">
-    这里是内容
+    这里是内容,这里应该放个类似插槽的东西
+    <RouterView/>
   </div>
 </template>
 <script setup lang="ts" name="App">
@@ -17,6 +18,7 @@ import Person from "@/components/Person.vue";
 import { type PersonInterface, type Persons } from '@/types';
 
 import { onMounted, reactive, ref } from 'vue'
+import { RouterView } from "vue-router";
 
 const isShow = ref(true);
 // setTimeout(() => {
