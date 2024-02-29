@@ -4,12 +4,12 @@
             <li v-for="item in personList" :key="item.id">{{ item.name }} --- {{ item.age }}</li>
         </ul>
     </div>
-    <h1>{{ useSums.sum }}</h1>
-    <button @click="useSums.changeSum">点我</button>
+    <h1>{{ sum }}</h1>
+    <button @click="changeSum">点我</button>
     <hr>
-    <button @click="useDogs.getDog">再来一个</button>
+    <button @click="getDog">再来一个</button>
     <br>
-    <img v-for="(url, index) in useDogs.dogList" :key="index" :src="url" alt="">
+    <img v-for="(url, index) in dogList" :key="index" :src="url" alt="">
 </template>
 
 <script lang="ts" setup name="Person">
@@ -20,8 +20,8 @@ import { type PersonInterface, type Persons } from '@/types/index';
 import useSum from '@/composition/useSum';
 import useDog from '@/composition/useDog';
 
-const useSums = useSum();
-const useDogs = useDog();
+const {sum,changeSum} = useSum();//最佳实践
+const {dogList,getDog} = useDog();
 
 
 
