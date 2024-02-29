@@ -1,5 +1,5 @@
 import axios from "axios";
-import { reactive } from "vue";
+import { onMounted, reactive } from "vue";
 export default function useDog() {
 	//https://dog.ceo/api/breed/pembroke/images/random
 	let dogList = reactive<any>([
@@ -18,6 +18,10 @@ export default function useDog() {
 		}
 		console.log(dogList);
 	};
+
+    onMounted(() => {//hooks里能用钩子
+        getDog();
+    })
     return {
         dogList,getDog
     }

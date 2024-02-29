@@ -15,13 +15,13 @@
 <script lang="ts" setup name="Person">
 
 
-import { onBeforeMount, onMounted, ref, reactive, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue';
+import { onBeforeMount, onMounted, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue';
 import { type PersonInterface, type Persons } from '@/types/index';
 import useSum from '@/composition/useSum';
 import useDog from '@/composition/useDog';
 
 const {sum,changeSum} = useSum();//最佳实践
-const {dogList,getDog} = useDog();
+const {dogList,getDog} = useDog();//最佳实践
 
 
 
