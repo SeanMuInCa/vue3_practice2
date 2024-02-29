@@ -4,9 +4,9 @@
     <h1>vue路由测试</h1>
   </div>
   <div class="nav">
-    <a href="/home" class="active">首页</a>
-    <a href="/news">新闻</a>
-    <a href="/about">关于</a>
+    <RouterLink to="/home" active-class="active">首页</RouterLink>
+    <RouterLink to="/news" active-class="active">新闻</RouterLink>
+    <RouterLink to="/about" active-class="active">关于</RouterLink>
   </div>
   <div class="content">
     这里是内容,这里应该放个类似插槽的东西
@@ -18,7 +18,7 @@ import Person from "@/components/Person.vue";
 import { type PersonInterface, type Persons } from '@/types';
 
 import { onMounted, reactive, ref } from 'vue'
-import { RouterView } from "vue-router";
+import { RouterView,RouterLink } from "vue-router";
 
 const isShow = ref(true);
 // setTimeout(() => {
