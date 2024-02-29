@@ -11,7 +11,7 @@
 <script lang="ts" setup name="Person">
 
 
-import { onBeforeMount, onMounted, ref, withDefaults, onBeforeUpdate, onUpdated, } from 'vue';
+import { onBeforeMount, onMounted, ref, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount,onUnmounted} from 'vue';
 import { type PersonInterface, type Persons } from '@/types/index';
 const sum = ref(0);
 let person: PersonInterface = {
@@ -47,6 +47,15 @@ onBeforeUpdate(() => {
 })
 onUpdated(() => {
     console.log('onUpdated');
+    
+})
+
+onBeforeUnmount(() => {
+    console.log('onBeforeUnmount');
+    
+})
+onUnmounted(() => {
+    console.log('onUnmounted');
     
 })
 </script>

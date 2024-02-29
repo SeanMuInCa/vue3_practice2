@@ -1,12 +1,16 @@
 <template>
-  <Person :personList="personList" />
+  <Person :personList="personList" v-if="isShow"/>
 </template>
 <script setup lang="ts" name="App">
 import Person from "@/components/Person.vue";
 import { type PersonInterface, type Persons } from '@/types';
-import { reactive } from 'vue'
 
+import { reactive, ref } from 'vue'
 
+const isShow = ref(true);
+// setTimeout(() => {
+//   isShow.value = false;
+// },5000)
 
 let personList = reactive<Persons>([//泛型是最佳实践
   { id: `safsdf01`, name: 'zs', age: 30 },
