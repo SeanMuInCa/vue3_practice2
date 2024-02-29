@@ -4,16 +4,31 @@
             <li v-for="item in personList" :key="item.id">{{ item.name }} --- {{ item.age }}</li>
         </ul>
     </div>
-    <h1>{{ sum }}</h1>
-    <button @click="changeSum">点我</button>
+    <h1>{{ useSums.sum }}</h1>
+    <button @click="useSums.changeSum">点我</button>
+    <hr>
+    <button @click="useDogs.getDog">再来一个</button>
+    <br>
+    <img v-for="(url, index) in useDogs.dogList" :key="index" :src="url" alt="">
 </template>
 
 <script lang="ts" setup name="Person">
 
 
-import { onBeforeMount, onMounted, ref, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount,onUnmounted} from 'vue';
+import { onBeforeMount, onMounted, ref, reactive, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue';
 import { type PersonInterface, type Persons } from '@/types/index';
-const sum = ref(0);
+import useSum from '@/composition/useSum';
+import useDog from '@/composition/useDog';
+
+const useSums = useSum();
+const useDogs = useDog();
+
+
+
+
+
+
+
 let person: PersonInterface = {
     id: `asfsda01`,
     name: 'zs',
@@ -26,38 +41,41 @@ let list: Persons = [
     { id: `safsdf03`, name: 'ww3', age: 51 }
 ];
 
-const changeSum = () => {
-    sum.value++;
-}
+
 withDefaults(defineProps<{ personList?: Persons }>(), {
     personList: () => [{ id: 'adfa', name: 'adfa', age: 1 }]//默认值
 });
-console.log(sum.value);
+
 onBeforeMount(() => {
     console.log('onBeforeMount');
-    
+
 }),
-onMounted(() => {
-    console.log('onMounted');//setup before mounted
-    
-})
+    onMounted(() => {
+        console.log('onMounted');//setup before mounted
+
+    })
 onBeforeUpdate(() => {
     console.log('onBeforeUpdate');
-    
+
 })
 onUpdated(() => {
     console.log('onUpdated');
-    
+
 })
 
 onBeforeUnmount(() => {
     console.log('onBeforeUnmount');
-    
+
 })
 onUnmounted(() => {
     console.log('onUnmounted');
-    
+
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+img {
+    height: 100px;
+    margin: 10px;
+}
+</style>
