@@ -9,14 +9,17 @@ const router = createRouter({
     history: createWebHistory(),//路由器工作模式，忘了都
     routes: [
         {
+            name: 'homePage',
             path: '/home',
             component: HomeVue
         },
         {
+            name: 'newsPage',
             path: '/news',
             component: NewsVue
         },
         {
+            name: 'aboutPage',
             path: '/about',
             component: AboutVue
         },

@@ -6,7 +6,7 @@
   <div class="nav">
     <!-- 切换路由默认是卸载组件 ,to也可以写成一个对象形式-->
     <RouterLink to="/home" active-class="active">首页</RouterLink>
-    <RouterLink to="/news" active-class="active">新闻</RouterLink>
+    <RouterLink :to="{name: 'newsPage'}" active-class="active">新闻</RouterLink>
     <RouterLink :to="{path: '/about'}" active-class="active">关于</RouterLink>
   </div>
   <div class="content">
