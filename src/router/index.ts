@@ -21,7 +21,7 @@ const router = createRouter({
             children: [
                 {
                     name: 'detailPage',
-                    path: 'detail/:id/:title/:content',//这里是配合params写法的改动
+                    path: 'detail/:id/:title/:content?',//这里是配合params写法的改动,加问号同样是表示可以有也可以没有
                     component: DetailVue,
                 }
             ]

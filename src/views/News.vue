@@ -3,7 +3,7 @@
         <ul>
             <!-- query写法 -->
             <!-- <li v-for="news in newsList" :key="news.id"><router-link :to="{name:'detailPage',query:{id:news.id,title:news.title,content:news.content}}">{{ news.title }}</router-link></li> -->
-            <!-- params写法 这么写路由要有改动 -->
+            <!-- params写法 这么写路由要有改动,不支持数组 -->
             <li v-for="news in newsList" :key="news.id"><router-link :to="{name:'detailPage',params:{id:news.id,title:news.title,content:news.content}}">{{ news.title }}</router-link></li>
         </ul>
         <div class="details">
