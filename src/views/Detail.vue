@@ -1,13 +1,14 @@
 <template>
     <ul class="list">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        <li>{{ route.query.id }}</li>
+        <li>{{ route.query.title }}</li>
+        <li>{{ route.query.content }}</li>
     </ul>
 </template>
 
 <script lang="ts" setup name="Detail">
-
+import {useRoute} from 'vue-router';
+const route = useRoute();
 </script>
 
 <style scoped>
