@@ -4,6 +4,7 @@ import {createRouter,createWebHistory} from 'vue-router'
 import AboutVue from '@/views/About.vue';
 import HomeVue from '@/views/Home.vue';
 import NewsVue from '@/views/News.vue';
+import DetailVue from '@/views/Detail.vue';
 //创建路由器
 const router = createRouter({
     history: createWebHistory(),//路由器工作模式，忘了都
@@ -16,7 +17,14 @@ const router = createRouter({
         {
             name: 'newsPage',
             path: '/news',
-            component: NewsVue
+            component: NewsVue,
+            children: [
+                {
+                    name: 'detailPage',
+                    path: 'detail',
+                    component: DetailVue,
+                }
+            ]
         },
         {
             name: 'aboutPage',
