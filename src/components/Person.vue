@@ -5,7 +5,13 @@
         </ul>
     </div>
     <h1>{{ sum }}</h1>
-    <button @click="changeSum">点我</button>
+    <select v-model.number="n">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <button @click="changeSum(n)">点我+</button>
+    <button @click="changeSum(n,'-')">点我-</button>
     <hr>
     <h1>{{ count }}</h1>
     <h1>{{ doubleCount }}</h1>
@@ -19,15 +25,16 @@
 <script lang="ts" setup name="Person">
 
 
-import { onBeforeMount, onMounted, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted } from 'vue';
+import { onBeforeMount, onMounted, withDefaults, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted,ref } from 'vue';
 import { type PersonInterface, type Persons } from '@/types/index';
 import useSum from '@/composition/useSum';
 import useDog from '@/composition/useDog';
 import {useCounterStore} from '@/stores/counter'
+
 const {sum,changeSum} = useSum();//最佳实践
 const {dogList,getDog} = useDog();//最佳实践
 
-
+const n = ref(0);
 const { count, doubleCount, increment } = useCounterStore();
 console.log(count);
 

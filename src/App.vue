@@ -1,5 +1,6 @@
 <template>
-  <!-- <Person :personList="personList" v-if="isShow"/> -->
+  <Person :personList="personList" v-if="isShow"/>
+  <ChitChat></ChitChat>
   <div class="title">
     <h1>vue路由测试</h1>
   </div>
@@ -16,6 +17,7 @@
 </template>
 <script setup lang="ts" name="App">
 import Person from "@/components/Person.vue";
+import ChitChat from "@/components/ChitChat.vue";
 import { type PersonInterface, type Persons } from '@/types';
 
 import { onMounted, reactive, ref } from 'vue'
