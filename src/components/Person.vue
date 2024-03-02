@@ -13,9 +13,9 @@
     <button @click="changeSum(n)">点我+</button>
     <button @click="changeSum(n,'-')">点我-</button>
     <hr>
-    <h1>{{ count }}</h1>
-    <h1>{{ doubleCount }}</h1>
-    <button @click="increment()">按钮2</button>
+    <h1>{{ countStore.count }}</h1>
+    <h1>{{ countStore.doubleCount }}</h1>
+    <button @click="countStore.increment()">按钮2</button>
     <hr>
     <button @click="getDog">再来一个</button>
     <br>
@@ -35,8 +35,8 @@ const {sum,changeSum} = useSum();//最佳实践
 const {dogList,getDog} = useDog();//最佳实践
 
 const n = ref(0);
-const { count, doubleCount, increment } = useCounterStore();
-console.log(count);
+const countStore = useCounterStore();
+console.log('@@',countStore);
 
 
 
