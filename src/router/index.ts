@@ -35,6 +35,10 @@ const router = createRouter({
             path: '/about',
             component: AboutVue
         },
+        {
+            path:'/',
+            redirect:'/home'//重定向
+        }
     ]
 })
 
