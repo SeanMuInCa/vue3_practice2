@@ -1,9 +1,9 @@
 <template>
     <ul class="list">
-        <!-- <li>{{ route.query.id }}</li>
+        <!-- <li>{{ route.query.id }}</li>//query
         <li>{{ route.query.title }}</li>
         <li>{{ route.query.content }}</li> -->
-        <!-- <li>{{ route.params.id }}</li>
+        <!-- <li>{{ route.params.id }}</li>//params
         <li>{{ route.params.title }}</li>
         <li>{{ route.params.content }}</li> -->
         <li>{{ id }}</li>

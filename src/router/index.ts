@@ -23,7 +23,14 @@ const router = createRouter({
                     name: 'detailPage',
                     path: 'detail/:id/:title/:content?',//这里是配合params写法的改动,加问号同样是表示可以有也可以没有
                     component: DetailVue,
-                    props:true//路由传参配置
+                    // props:true//路由传参配置的第一种写法，只针对params参数
+                    props(to) {//函数式写法
+                        return{
+                            id:to.params.id,
+                            title:to.params.title,
+                            content:to.params.content
+                        }
+                    },
                 }
             ]
         },
