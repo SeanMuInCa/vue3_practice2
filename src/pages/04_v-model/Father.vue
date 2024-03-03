@@ -5,7 +5,8 @@
     <h4>{{ password }}</h4>
     <!-- v-model用在html标签上 -->
     <!-- <input type="text" v-model="username"> -->
-    <!-- <input type="text" :value="username" @input="username = (<HTMLInputElement>$event.target).value"> -->
+    <!-- v-model的底层原理 -->
+    <!-- <input type="text" :value="username" @input="username = (<HTMLInputElement>$event.target).value">  -->
 
     <!-- v-model用在组件标签上 -->
     <!-- <AtguiguInput v-model="username"/> -->

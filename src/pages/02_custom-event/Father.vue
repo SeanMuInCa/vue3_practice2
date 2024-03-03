@@ -3,6 +3,7 @@
 		<h3>父组件</h3>
 		<h4 v-show="toy">子给的玩具：{{ toy }}</h4>
 		<!-- 给子组件Child绑定事件 -->
+		<!-- 命名方式为最佳实践 -->
 		<Child @send-toy="saveToy" />
 	</div>
 </template>
