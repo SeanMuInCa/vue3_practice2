@@ -30,7 +30,8 @@ import { onBeforeMount, onMounted, withDefaults, onBeforeUpdate, onUpdated, onBe
 import { type PersonInterface, type Persons } from '@/types/index';
 import useSum from '@/composition/useSum';
 import useDog from '@/composition/useDog';
-import {useCounterStore} from '@/stores/counter'
+import {useCounterStore} from '@/stores/counter';
+import {storeToRefs} from 'pinia';
 
 const {sum,changeSum} = useSum();//最佳实践
 const {dogList,getDog} = useDog();//最佳实践
@@ -39,6 +40,8 @@ const n = ref(0);
 const countStore = useCounterStore();
 //我之前犯过的错误，我知道了，解构需要torefs，但是不推荐这么写，这个玩意好危险
 //const {count, doubleCount, increment} = toRefs(useCounterStore());
+//用这个比较合理
+//const {count, doubleCount, increment} = storeToRefs(useCounterStore());
 console.log('@@',countStore);
 
 const addMore = () => {
