@@ -13,6 +13,11 @@ import {storeToRefs} from 'pinia';
 const chatStore = useChatStore();
 const {list} = storeToRefs(chatStore);
 
+chatStore.$subscribe(() => {//这玩意会一直监测变化,store里任何数据变了，都会被调用，就是watch
+    console.log(list.value);
+    //list.value.shift();
+    
+})
 const getData = () => {
     chatStore.getData();
 }

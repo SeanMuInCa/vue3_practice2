@@ -11,6 +11,7 @@ export const useChatStore = defineStore("chitchat", () => {
 		{ id: `safsdf03`, name: "ww3", age: 51 },
 	]);
 
+  let a = ref(0);
   const getData = async () => {
     let res = await axios.get('https://api.uomg.com/api/rand.qinghua?formate=json');
    // console.log(nanoid);
@@ -23,5 +24,5 @@ export const useChatStore = defineStore("chitchat", () => {
     list.push(newData);
 }
 
-	return {list,getData};
+	return {list,getData,a};
 });
