@@ -40,7 +40,7 @@ const n = ref(0);
 const countStore = useCounterStore();
 //我之前犯过的错误，我知道了，解构需要torefs，但是不推荐这么写，这个玩意好危险
 //const {count, doubleCount, increment} = toRefs(useCounterStore());
-//用这个比较合理
+//用这个比较合理！！！！！
 //const {count, doubleCount, increment} = storeToRefs(useCounterStore());
 console.log('@@',countStore);
 
