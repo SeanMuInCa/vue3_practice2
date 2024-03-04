@@ -10,6 +10,7 @@
 <script setup lang="ts" name="GrandChild">
   import { inject } from "vue";
 
+  //后面跟的是个默认值写法,以防止没有传过来值,也可以规避TS类型问题
   let {money,updateMoney} = inject('moneyContext',{money:0,updateMoney:(param:number)=>{}})
   let car = inject('car',{brand:'未知',price:0})
 </script>
