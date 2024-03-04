@@ -3,6 +3,7 @@
     <h3>父组件</h3>
     <div class="content">
       <Game>
+        <!-- 从子组件传过来的数据被打包在params的对象里 -->
         <template v-slot="params">
           <ul>
             <li v-for="y in params.youxi" :key="y.id">
