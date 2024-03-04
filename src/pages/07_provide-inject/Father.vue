@@ -20,7 +20,7 @@
     money.value -= value
   }
 
-  // 向后代提供数据
+  // 向后代提供数据,如果传value就失去响应式了
   provide('moneyContext',{money,updateMoney})
   provide('car',car)
 
