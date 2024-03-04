@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts" name="App">
-import {ref,reactive,shallowRef,shallowReactive} from 'vue';
+import {ref,reactive,shallowRef,shallowReactive, readonly,shallowReadonly} from 'vue';
 // shallowRef只能处理第一层数据，就是.value可以，再往下不行了
 //这个的用处是当我只关注这个对象是否被人替换的时候，用这个，而不关注里面的属性是否变化
 let sum = ref(0);
@@ -40,12 +40,17 @@ let person = ref({
 	hobby:['sing','draw','games'],
 	gender:'female'
 })
+
 //shallowReactive也差不多，只能处理一个.再往下就不行了
 let car = reactive({
 	brand: 'honda',
 	price: 30,
 	dealers:['a','b','c']
 })
+let copy = readonly(car);//全只读，ref也可以用，一样的
+let copy1 = readonly(sum);//全只读，ref也可以用，一样的
+//shallowReadonly的理解同上面一样的
+
 const add = () => {
 	sum.value++;
 };
@@ -75,6 +80,7 @@ const addHobby = () => {
 
 const changePrice = () => {
 	car.price += 10;
+	//copy.price += 10;
 }
 const changeBrand = () => {
 	car.brand = 'Honda'
