@@ -1,5 +1,5 @@
 <template>
-	<div class="">
+	<div class="outter">
 		<h2>sum: {{ sum }}</h2>
 		<br>
 		<h2>{{ person.name }} --- {{ person.age }}</h2>
@@ -26,6 +26,8 @@
 		<button @click="changeBrand">改品牌</button>
 		<button @click="addDealer">加经销商</button>
 		<button @click="changeCar">改车</button>
+		<br>
+		<Modal></Modal>
 	</div>
 	<hr>
 	<CustomRef></CustomRef>
@@ -34,6 +36,7 @@
 <script setup lang="ts" name="App">
 import {ref,reactive,shallowRef,shallowReactive, readonly,shallowReadonly, toRaw} from 'vue';
 import CustomRef from '@/components/CustomRef.vue';
+import Modal from '@/components/Modal.vue'
 // shallowRef只能处理第一层数据，就是.value可以，再往下不行了
 //这个的用处是当我只关注这个对象是否被人替换的时候，用这个，而不关注里面的属性是否变化
 let sum = ref(0);
@@ -105,6 +108,14 @@ const changeCar = () => {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+.outter{
+    background-color: #ddd;
+	width: 50%;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 10px;
+	/* 加了这个属性，就出问题了 */
+	filter: saturate(100%);
+}
 </style>
