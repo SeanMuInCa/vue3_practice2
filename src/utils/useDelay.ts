@@ -17,7 +17,7 @@ function delayRef(initValue: string, delay: number) {
             }
         }
     });
-    return msg1;
+    return {msg1};
 }
 
 export default delayRef;

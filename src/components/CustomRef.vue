@@ -5,11 +5,11 @@
 
 <script setup lang="ts">
 import { ref, customRef } from 'vue';
-import delay from '@/utils/delay'
+import delay from '@/utils/useDelay'
 
 let msg = ref('hello');
 
-let msg1 = delay("hello", 1000);
+let {msg1} = delay("hello", 1000);
 // let timer:number;
 // let initValue = 'hello'
 // let msg1 = customRef((track, trigger) => {//track某个数据，当改动的时候trigger这个set   
@@ -34,4 +34,4 @@ let msg1 = delay("hello", 1000);
 
 </script>
 
-<style scoped></style>
+<style scoped></style>@/utils/useDelay
