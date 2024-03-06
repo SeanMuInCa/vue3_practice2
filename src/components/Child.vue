@@ -11,7 +11,7 @@
 import {ref} from 'vue';
 import axios from 'axios'
 let sum = ref(0);
-
+//有异步任务的组件，且无法用async的时候，用suspense把组件包一下在父组件里
 let res = await axios.get('https://api.uomg.com/api/rand.qinghua?formate=json');
 console.log(res);
 
