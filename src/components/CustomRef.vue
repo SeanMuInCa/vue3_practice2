@@ -4,24 +4,34 @@
 </template>
 
 <script setup lang="ts">
-import { ref,customRef } from 'vue';
-
+import { ref, customRef } from 'vue';
+import delay from '@/utils/delay'
 
 let msg = ref('hello');
 
-let initValue = 'hello'
-let msg1 = customRef(() => {
-    return{
-        get(){
-            return initValue;
-        },
-        set(val){
-            initValue = val;
-        }
-    }
-})
+let msg1 = delay("hello", 1000);
+// let timer:number;
+// let initValue = 'hello'
+// let msg1 = customRef((track, trigger) => {//track某个数据，当改动的时候trigger这个set   
+//     return{
+//         get(){
+//             track();
+//             return initValue;
+//         },
+//         set(val){
+//             clearTimeout(timer);
+//             timer = setTimeout(() => {//可以处理数据
+//                 initValue = val;
+//                 trigger();  
+//             }, 1000);
+//         }
+//     }
+// })
+
+
+
+
+
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
