@@ -9,7 +9,7 @@ export const myEffect = (fn: Function) => {
 };
 
 const targetMap = new WeakMap();
-export const track = (target, key) => {
+export const track = (target:any, key:any) => {
 	let depsMap = targetMap.get(target);
 	if (!depsMap) {
 		depsMap = new Map();
@@ -26,12 +26,12 @@ export const track = (target, key) => {
 };
 
 
-export const trigger = (target, key) => {
+export const trigger = (target:any, key:any) => {
     const depsMap = targetMap.get(target);
 
     const deps = depsMap.get(key) ? depsMap.get(key) : null;
 
-    deps.forEach(effect => {
+    deps.forEach((effect: () => void) => {
         effect();
     });
 }
