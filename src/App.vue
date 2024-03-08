@@ -1,4 +1,5 @@
 <template>
+	<Test></Test>
 	<div class="outter">
 		<h2>sum: {{ sum }}</h2>
 		<br>
@@ -49,6 +50,7 @@ import { ref, reactive, shallowRef, shallowReactive, readonly, shallowReadonly, 
 import CustomRef from '@/components/CustomRef.vue';
 import Modal from '@/components/Modal.vue'
 import Child from '@/components/Child.vue'
+import Test from '@/components/Test.vue'
 import {myReactive} from '@/utils/myReactive'
 // shallowRef只能处理第一层数据，就是.value可以，再往下不行了
 //这个的用处是当我只关注这个对象是否被人替换的时候，用这个，而不关注里面的属性是否变化

@@ -1,0 +1,36 @@
+$namespace: 'bem' !default;
+
+$block-sel:"-" !default;
+$elem-sel:"__" !default;
+$mod-sel:"--" !default;
+
+//block
+@mixin b($block){
+    $B: #{$namespace + $block-sel + $block};
+    .#{$B}{
+        @content;//样式占位符
+    }
+}
+
+//element
+@mixin e($el){
+    $selector:&;//Fuji类名
+    @at-root{
+        #{$selector + $elem-sel + $el}{
+            @content;
+        }
+    }
+    
+}
+
+//modify
+@mixin m($m){
+    $selector:&;//Fuji类名
+    @at-root{
+        #{$selector + $mod-sel + $m}{
+            @content;
+        }
+    }
+}
+
+//全局生效需要配置vite.config
