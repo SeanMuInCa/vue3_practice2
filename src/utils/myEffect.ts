@@ -1,4 +1,4 @@
-let activeEffect;
+let activeEffect:Function;
 export const myEffect = (fn: Function) => {
 	const _effect = function () {
 		activeEffect = _effect;
